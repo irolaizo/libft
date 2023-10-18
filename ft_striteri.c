@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irolaizo <irolaizo@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 14:01:36 by irolaizo          #+#    #+#             */
-/*   Updated: 2023/09/30 17:20:06 by irolaizo         ###   ########.fr       */
+/*   Created: 2023/10/09 20:50:55 by irolaizo          #+#    #+#             */
+/*   Updated: 2023/10/11 17:19:29 by irolaizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i])
 	{
+		f(i, &s[i]);
 		i++;
 	}
-	return (i);
 }
-/*
-int main (void)
-{
-    char  j;
 
-    //j = ft_strlen("qqqqqqqqqqq");
-	j = 48;
-    write (1, &j, 1);
-	
+/* void	ft_function(unsigned int i, char *s)
+{
+	*s = i % 2 + '0';
 }
-*/
+
+int	main(void)
+{
+	char	*j;
+	j = ft_strdup("Hola buenas tardes");
+	printf("%s\n", j);
+	ft_striteri(j, ft_function);
+	printf("%s\n", j);
+
+	free(j);
+	return (0);
+} */

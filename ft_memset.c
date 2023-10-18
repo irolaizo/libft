@@ -6,13 +6,12 @@
 /*   By: irolaizo <irolaizo@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 15:02:02 by irolaizo          #+#    #+#             */
-/*   Updated: 2023/09/22 14:46:47 by irolaizo         ###   ########.fr       */
+/*   Updated: 2023/10/03 16:50:56 by irolaizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
+
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned int	i;
@@ -27,14 +26,9 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-/*
-//#include <stdio.h>
-
-int main (void)
+/* int main (void)
 {
     char str[10] = "abcde";
     ft_memset(str + 1, '*', 2*(sizeof(char)));
 	printf("%s\n", str);
-}
-*/
+} */

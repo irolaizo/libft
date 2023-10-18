@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irolaizo <irolaizo@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 14:01:36 by irolaizo          #+#    #+#             */
-/*   Updated: 2023/09/30 17:20:06 by irolaizo         ###   ########.fr       */
+/*   Created: 2023/10/03 16:09:02 by irolaizo          #+#    #+#             */
+/*   Updated: 2023/10/03 16:56:28 by irolaizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	i;
+	char	*str;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	str = malloc(count * size);
+	if (!str)
+		return (NULL);
+	return (ft_memset(str, 0, (count * size)));
 }
-/*
-int main (void)
+/* int main(void)
 {
-    char  j;
+	char	*msn1;
+	char	*msn2;
 
-    //j = ft_strlen("qqqqqqqqqqq");
-	j = 48;
-    write (1, &j, 1);
-	
-}
-*/
+	msn1 = ft_calloc(4, sizeof(char));
+	msn1 = "Hola";
+	ft_putendl_fd(msn1, 1);
+	msn2 = calloc(4, sizeof(char));
+	msn2 = "Hola";
+	ft_putendl_fd(msn2, 1);
+} */

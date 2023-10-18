@@ -6,16 +6,20 @@
 /*   By: irolaizo <irolaizo@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:51:10 by irolaizo          #+#    #+#             */
-/*   Updated: 2023/09/25 17:07:51 by irolaizo         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:45:14 by irolaizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memmove(void *dst, void *src, size_t len)
+void	*ft_memmove(void *dst, void *src, size_t len)
 {
-	int	i;
+	int		i;
+	void	*d;
 
+	d = dst;
+	if ((char *)dst == 0 && (char *)src == 0)
+		return ((char *)0);
 	if (dst < src)
 	{
 		i = 0;
@@ -34,6 +38,7 @@ void	ft_memmove(void *dst, void *src, size_t len)
 			i--;
 		}
 	}
+	return (d);
 }
 
 /* int	main(void)

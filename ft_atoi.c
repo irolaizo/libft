@@ -1,36 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irolaizo <irolaizo@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 14:01:36 by irolaizo          #+#    #+#             */
-/*   Updated: 2023/09/30 17:20:06 by irolaizo         ###   ########.fr       */
+/*   Created: 2023/10/02 17:51:39 by irolaizo          #+#    #+#             */
+/*   Updated: 2023/10/02 19:12:53 by irolaizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
+	int	sign;
+	int	num;
 
 	i = 0;
-	while (str[i] != '\0')
+	sign = 1;
+	num = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if ((str[i] == '+') || (str[i] == '-'))
 	{
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	return (i);
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10;
+		num = num + str[i] - '0';
+		i++;
+	}
+	return (num * sign);
 }
 /*
 int main (void)
 {
-    char  j;
-
-    //j = ft_strlen("qqqqqqqqqqq");
-	j = 48;
-    write (1, &j, 1);
-	
+	const char *s = "100";
+	int i;
+	i = ft_atoi (s);
+	printf ("%d\n", i);
 }
 */

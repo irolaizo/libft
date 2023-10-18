@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irolaizo <irolaizo@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 14:01:36 by irolaizo          #+#    #+#             */
-/*   Updated: 2023/09/30 17:20:06 by irolaizo         ###   ########.fr       */
+/*   Created: 2023/10/03 17:01:00 by irolaizo          #+#    #+#             */
+/*   Updated: 2023/10/03 17:25:54 by irolaizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strdup(const char *s1)
 {
-	int	i;
+	char	*s2;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	s2 = malloc(sizeof(char) * ft_strlen(s1)+1);
+	if (!s2)
+		return (NULL);
+	ft_memcpy(s2, s1, ft_strlen(s1)+1);
+	return (s2);
 }
-/*
-int main (void)
+/* int main (void)
 {
-    char  j;
+	char	*str1 = "Iratxe";
+	char	*str2;
+	char	*str3;
 
-    //j = ft_strlen("qqqqqqqqqqq");
-	j = 48;
-    write (1, &j, 1);
-	
-}
-*/
+	str2 = ft_strdup(str1);
+	ft_putendl_fd(str2, 1);
+	str3 = strdup (str1);
+	ft_putendl_fd(str3, 1);
+} */
