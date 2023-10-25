@@ -12,25 +12,29 @@
 
 #include "libft.h"
 
+//THE OBJECTIVE OF THIS IS TO FILL OF NULLS THE POINTER *S
 void	ft_bzero(void *s, size_t len)
 {
-	char	*p;
+	//WE NEED TO CAST THE VOID *S BECAUSE WE CAN'T OPERATE ON A VOID *
+    char	*pointer;
 
-	p = (char *)s;
+    //TO CAST IT, WE CREATE A CHAR POINTER AND DO THAT (CHAR *)S
+	pointer = (char *)s;
 	while (len--)
-	*p++ = 0;
+    {
+        *pointer++ = 0;
+    }	
 }
-/*
-#include <stdio.h>
-#include <stddef.h>
 
-void    ft_bzero(void *s, size_t len);
-int main()
+int main (void)
 {
-    char arreglo[10] = "Hola Mulendo";
-    printf("Alentes de bzero: %s\len", arreglo);
-    ft_bzero(arreglo, sizeof(arreglo));
-    printf("Después de bzero: %s\len", arreglo);
-    return(0);
+    char    *iratxe;
+    iratxe = (char *)malloc(sizeof(char)) * (6 + 1);
+    if (!iratxe)
+        return(0);
+    //printf("%s\n", iratxe);
+    ft_bzero(iratxe);
+    printf("%s\n", iratxe);
 }
-*/
+
+

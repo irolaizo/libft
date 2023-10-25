@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
-/*
+/* 
 int main (void)
 {
     char  j;
@@ -33,4 +33,4 @@ int main (void)
     write (1, &j, 1);
 	
 }
-*/
+ */
