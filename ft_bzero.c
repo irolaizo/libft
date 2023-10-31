@@ -12,13 +12,10 @@
 
 #include "libft.h"
 
-//THE OBJECTIVE OF THIS IS TO FILL OF NULLS THE POINTER *S
 void	ft_bzero(void *s, size_t len)
 {
-	//WE NEED TO CAST THE VOID *S BECAUSE WE CAN'T OPERATE ON A VOID *
     char	*pointer;
 
-    //TO CAST IT, WE CREATE A CHAR POINTER AND DO THAT (CHAR *)S
 	pointer = (char *)s;
 	while (len--)
     {
@@ -26,7 +23,7 @@ void	ft_bzero(void *s, size_t len)
     }	
 }
 
-int main (void)
+/* int main (void)
 {
     char    *iratxe;
     iratxe = (char *)malloc(sizeof(char)) * (6 + 1);
@@ -36,5 +33,5 @@ int main (void)
     ft_bzero(iratxe);
     printf("%s\n", iratxe);
 }
-
+ */
 
