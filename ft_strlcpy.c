@@ -6,7 +6,7 @@
 /*   By: irolaizo <irolaizo@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:28:39 by irolaizo          #+#    #+#             */
-/*   Updated: 2023/09/26 11:25:40 by irolaizo         ###   ########.fr       */
+/*   Updated: 2024/02/23 13:18:05 by irolaizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main (void)
 	char dst[10] = "IRATXE";
 	char dst2[10] = "IRATXE";
 
-	printf("Retorna: %zu\nSRC: %s\nDST: %s\n\n", ft_strlcpy(dst, src, 2), src, dst);
+	printf("Retorna: %zuSRC: %sDST: %s", ft_strlcpy(dst, src, 2), src, dst);
 	printf("Retorna: %zu\nSRC: %s\nDST: %s", strlcpy(dst2, src, 2), src, dst2);
 	write(1, &z, 1);
 }
